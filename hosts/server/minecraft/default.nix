@@ -4,6 +4,7 @@
       ./servers.nix
   ];
 
+  hardware.enableRedistributableFirmware = true;
   hardware.graphics = {
     enable = true;
 
@@ -13,6 +14,10 @@
       vpl-gpu-rt
     ];
   };
+
+  boot.kernelParams = [
+    "i915.enable_guc=3"
+  ];
 
   environment.systemPackages = with pkgs; [
     clinfo
