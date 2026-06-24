@@ -27,5 +27,6 @@
   users.users.${settings.username}.extraGroups = [
     "render"
     "video"
+    "minecraft"
   ];
 }

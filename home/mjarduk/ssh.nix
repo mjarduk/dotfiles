@@ -8,6 +8,10 @@
         HostName = "192.168.125.125";
         User = "mjarduk";
       };
+      mc = {
+        HostName = "192.168.125.180";
+        User = "mjarduk";
+      };
       git = {
         HostName = "192.168.125.125";
         Port = 23231;
