@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   services.fcgiwrap.instances.nginx = {
-    # enable = true;
     socket = {
       type = "unix";
       address = "/run/fcgiwrap/fcgiwrap.sock";
@@ -34,7 +33,11 @@
         "@blog_cgi" = {
           extraConfig = ''
             include ${pkgs.nginx}/conf/fastcgi_params;
+            fastcgi_split_path_info ^(/blog)(/.*)?$;
             fastcgi_param SCRIPT_FILENAME /srv/marduk.ru/cgi-bin/blog.cgi;
+            fastcgi_param SCRIPT_NAME     $fastcgi_script_name;
+            fastcgi_param PATH_INFO       $fastcgi_path_info;
+
             fastcgi_pass unix:/run/fcgiwrap/fcgiwrap.sock;
           '';
         };
@@ -49,6 +52,9 @@
           extraConfig = ''
             include ${pkgs.nginx}/conf/fastcgi_params;
             fastcgi_param SCRIPT_FILENAME /srv/marduk.ru/cgi-bin/main.cgi;
+            fastcgi_param SCRIPT_NAME     "";
+            fastcgi_param PATH_INFO       $uri;
+
             fastcgi_pass unix:/run/fcgiwrap/fcgiwrap.sock;
           '';
         };
