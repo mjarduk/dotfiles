@@ -1,10 +1,14 @@
 { ... }: {
   services.fcgiwrap.instances.nginx = {
     # enable = true;
-    socketType = "unix";
-    socketAddress = "/run/fcgiwrap/fcgiwrap.sock";
-    user = "nginx";
-    group = "nginx";
+    socket = {
+      type = "unix";
+      address = "/run/fcgiwrap/fcgiwrap.sock";
+    };
+    process = {
+      user = "nginx";
+      group = "nginx";
+    };
   };
 
   systemd.tmpfiles.rules = [
