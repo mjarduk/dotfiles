@@ -4,6 +4,8 @@
     socket = {
       type = "unix";
       address = "/run/fcgiwrap/fcgiwrap.sock";
+      user = "nginx";
+      group = "nginx";
     };
     process = {
       user = "nginx";
