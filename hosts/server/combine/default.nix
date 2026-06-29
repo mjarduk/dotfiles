@@ -10,6 +10,7 @@
     ./garage.nix
     ./git.nix
     ./wg.nix
+    ./web.nix
   ];
 
   services.prometheus = {
