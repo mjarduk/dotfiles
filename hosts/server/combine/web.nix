@@ -1,6 +1,6 @@
 { ... }: {
-  services.fcgiwrap = {
-    enable = true;
+  services.fcgiwrap.instances.nginx = {
+    # enable = true;
     socketType = "unix";
     socketAddress = "/run/fcgiwrap/fcgiwrap.sock";
     user = "nginx";
