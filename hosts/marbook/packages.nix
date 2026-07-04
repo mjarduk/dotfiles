@@ -17,6 +17,8 @@
     android-tools
     amneziawg-tools
     amneziawg-go
+    colima
+    docker
     duti
     ghostty-bin
     gnupg

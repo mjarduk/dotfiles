@@ -6,6 +6,7 @@
   ];
 
   home-manager.users.mjarduk = import ../../home/mjarduk;
+  home-manager.backupFileExtension = ".bak";
   home-manager.extraSpecialArgs = {
     username = "mjarduk";
     homeDirectory = "/Users/mjarduk";
