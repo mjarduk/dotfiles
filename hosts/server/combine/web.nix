@@ -31,7 +31,7 @@
       root = "/srv/marduk.ru/public";
       forceSSL = true;
       sslCertificate = ./origin-cert.pem;
-      sslCertificateKey = config.age.secrets.combine_ssl_privkey;
+      sslCertificateKey = config.age.secrets.combine_ssl_privkey.path;
 
       locations = {
         "^~ /blog" = {
