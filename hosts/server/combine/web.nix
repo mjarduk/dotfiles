@@ -58,6 +58,10 @@
             fastcgi_pass unix:/run/fcgiwrap/fcgiwrap.sock;
           '';
         };
+
+        "/map/" = {
+          proxyPass = "http://192.168.125.180:8100/";
+        };
       };
 
       extraConfig = ''
