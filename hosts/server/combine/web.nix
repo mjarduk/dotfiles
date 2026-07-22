@@ -1,5 +1,9 @@
 { pkgs, config, ... }: {
-  age.secrets.combine_ssl_privkey.file = ../../../secrets/combine_ssl_privkey.age;
+  age.secrets.combine_ssl_privkey = {
+    file = ../../../secrets/combine_ssl_privkey.age;
+    owner = "nginx";
+    group = "nginx";
+  };
 
   services.fcgiwrap.instances.nginx = {
     socket = {
