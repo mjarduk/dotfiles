@@ -20,7 +20,23 @@
     git
   ];
 
-  nix.settings.experimental-features = "nix-command flakes";
+  nix = {
+    settings = {
+      max-jobs = "auto";
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
+
+    gc = {
+      automatic = true;
+      interval = {
+        Hour = 3;
+        Minute = 0;
+      };
+
+      options = "--delete-older-than 3d";
+    };
+  };
 
   users.users.mjarduk = {
     name = "mjarduk";
