@@ -20,6 +20,11 @@
 
   services.nginx = {
     enable = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedGzipSettings = true;
+    recommendedBrotliSettings = true;
+
     virtualHosts."marduk.ru" = {
       root = "/srv/marduk.ru/public";
 
