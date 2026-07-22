@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  age.secrets.combine_ssl_privkey.file = ../../../secrets/combine_ssl_privkey.age;
+
   services.fcgiwrap.instances.nginx = {
     socket = {
       type = "unix";
@@ -27,6 +29,9 @@
 
     virtualHosts."marduk.ru" = {
       root = "/srv/marduk.ru/public";
+      forceSSL = true;
+      sslCertificate = ./origin-cert.pem;
+      sslCertificateKey = config.age.secrets.combine_ssl_privkey;
 
       locations = {
         "^~ /blog" = {
@@ -91,5 +96,5 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }
