@@ -28,6 +28,7 @@
       username = "mjarduk";
       sshPubkeys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP30FsTAhKNGSnDSXIK67xRmeVAzmzAoLzXa88r8hjEO mjarduk@marmar"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFEIMVVQMcn0U/m139LB7XLpg38U33WI+Fy8ba4Jp2iK mjarduk@marbook"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDfuyrIO4JyPlma1ZFt+3T3c6N0GeaI0BFnB1f6Ov8o u0_a307@localhost"
         "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBn0hysw8HdKRBT8500YrZwP0mqi1vrPztQxnbMkBuNEAAAABHNzaDo= mjarduk@gmail.com"
       ];
