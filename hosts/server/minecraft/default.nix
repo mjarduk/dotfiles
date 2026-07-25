@@ -18,7 +18,13 @@
   environment.systemPackages = with pkgs; [
     clinfo
     pciutils
+    btop
   ];
+
+  # services.prometheus.exporters.node = {
+  #   enable = true;
+  #   port = 9000;
+  # };
 
   users.users.${settings.username}.extraGroups = [
     "render"
