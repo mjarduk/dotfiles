@@ -28,9 +28,5 @@
     options = [ "defaults" "nofail" "x-systemd.device-timeout=10" ];
   };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/cccefc9f-d587-4ec4-9110-62ee8f67e569"; }
-    ];
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
