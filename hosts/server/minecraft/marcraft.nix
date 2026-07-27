@@ -128,6 +128,7 @@ in
 
             Restart = "on-failure";
             RestartSec = "30s";
+            OOMScoreAdjust = -1000;
 
             PrivateTmp = true;
             NoNewPrivileges = true;
