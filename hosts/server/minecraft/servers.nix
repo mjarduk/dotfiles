@@ -18,7 +18,7 @@
   services.marcraft.zapusk = {
     enable = true;
 
-    dataDir = "/srv/minecraft/zapusk-2026-08";
+    dataDir = "/mnt/universalis-data/zapusk-2026-08";
     javaPackage = pkgs.jdk25;
     jvmFlags = ["-XX:+UseZGC" "-XX:+UseCompactObjectHeaders" "-XX:+UseStringDeduplication" "-Xmx16G" "-Xms16G"];
     forgeArgsPath = "libraries/net/neoforged/neoforge/21.1.243/unix_args.txt";
