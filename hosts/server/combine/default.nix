@@ -25,6 +25,12 @@
           targets = [ "localhost:3903" ];
         }];
       }
+      {
+        job_name = "minecraft-node";
+        static_configs = [{
+          targets = [ "192.168.125.180:9000" ];
+        }];
+      }
     ];
   };
 

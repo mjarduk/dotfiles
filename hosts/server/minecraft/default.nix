@@ -5,14 +5,10 @@
   ];
 
   hardware.enableRedistributableFirmware = true;
-  hardware.graphics = {
-    enable = true;
 
-    extraPackages = with pkgs; [
-      intel-compute-runtime
-      intel-media-driver
-      vpl-gpu-rt
-    ];
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
   };
 
   boot.kernelParams = [
@@ -22,7 +18,13 @@
   environment.systemPackages = with pkgs; [
     clinfo
     pciutils
+    btop
   ];
+
+  # services.prometheus.exporters.node = {
+  #   enable = true;
+  #   port = 9000;
+  # };
 
   users.users.${settings.username}.extraGroups = [
     "render"

@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  age.secrets.combine_ssl_privkey = {
+    file = ../../../secrets/combine_ssl_privkey.age;
+    owner = "nginx";
+    group = "nginx";
+  };
+
   services.fcgiwrap.instances.nginx = {
     socket = {
       type = "unix";
@@ -20,8 +26,16 @@
 
   services.nginx = {
     enable = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedGzipSettings = true;
+    recommendedBrotliSettings = true;
+
     virtualHosts."marduk.ru" = {
       root = "/srv/marduk.ru/public";
+      forceSSL = true;
+      sslCertificate = ./origin-cert.pem;
+      sslCertificateKey = config.age.secrets.combine_ssl_privkey.path;
 
       locations = {
         "^~ /blog" = {
@@ -58,6 +72,10 @@
             fastcgi_pass unix:/run/fcgiwrap/fcgiwrap.sock;
           '';
         };
+
+        "/map/" = {
+          proxyPass = "http://192.168.125.180:8100/";
+        };
       };
 
       extraConfig = ''
@@ -82,5 +100,5 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

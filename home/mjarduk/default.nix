@@ -15,7 +15,6 @@
     nixd
     nil
     nixfmt
-    dosbox-x
     inputs.agenix.packages.${pkgs.system}.default
   ];
 
