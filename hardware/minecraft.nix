@@ -22,6 +22,12 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/universalis-data" = {
+    device = "/dev/disk/by-uuid/6b41edcd-61f0-4907-bb47-d117d300e1bd";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" "x-systemd.device-timeout=10" ];
+  };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/cccefc9f-d587-4ec4-9110-62ee8f67e569"; }
     ];
