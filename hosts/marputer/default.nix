@@ -87,9 +87,6 @@
       expat
       glib
       libxkbcommon
-      qt6.qtbase
-      qt6.qtsvg
-      qt6.qtwayland
       libx11
       libxext
       libxrender
@@ -98,6 +95,7 @@
       libice
       libxcb
       python313
+      libglvnd
     ];
   };
 }

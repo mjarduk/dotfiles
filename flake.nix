@@ -25,6 +25,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    claude-code = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows ="nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, home-manager-unstable, agenix, ... }:
@@ -67,8 +72,9 @@
         specialArgs = { inherit settings; };
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
-          ./hosts/server/generic
-          ./hosts/server/generic/vmwguest.nix
+          ./hosts/common
+          ./hosts/common/server.nix
+          ./hosts/common/vmwguest.nix
           ./hosts/server/combine
           ./hardware/combine.nix
           agenix.nixosModules.default
@@ -82,8 +88,9 @@
         specialArgs = { inherit settings; };
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
-          ./hosts/server/generic
-          ./hosts/server/generic/vmwguest.nix
+          ./hosts/common
+          ./hosts/common/server.nix
+          ./hosts/common/vmwguest.nix
           ./hosts/server/minecraft
           ./hardware/minecraft.nix
           agenix.nixosModules.default
@@ -98,7 +105,7 @@
         specialArgs = { inherit settings inputs home-manager; };
         modules = [
           { nixpkgs.hostPlatform = "x86_64-linux"; }
-          ./hosts/server/generic
+          ./hosts/common
           ./hosts/marputer
           ./hardware/marputer.nix
           agenix.nixosModules.default
