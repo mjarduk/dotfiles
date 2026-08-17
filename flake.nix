@@ -20,6 +20,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, home-manager-unstable, agenix, ... }:
@@ -81,6 +86,21 @@
           ./hosts/server/generic/vmwguest.nix
           ./hosts/server/minecraft
           ./hardware/minecraft.nix
+          agenix.nixosModules.default
+        ];
+      };
+      marputer = let
+        settings = commonSettings // {
+          hostname = "marputer";
+          bareMetal = true;
+        };
+      in nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit settings inputs home-manager; };
+        modules = [
+          { nixpkgs.hostPlatform = "x86_64-linux"; }
+          ./hosts/server/generic
+          ./hosts/marputer
+          ./hardware/marputer.nix
           agenix.nixosModules.default
         ];
       };
