@@ -29,7 +29,6 @@
     ];
     casks = [
       "winbox"
-      "vesktop"
       "anki"
       "prismlauncher"
       "milkytracker"
