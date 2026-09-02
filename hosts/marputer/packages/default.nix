@@ -6,5 +6,6 @@
     ./audio.nix
     ./code.nix
     ./socials.nix
+    ./gamesies.nix
   ];
 }

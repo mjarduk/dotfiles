@@ -11,6 +11,7 @@
     ./git.nix
     ./wg.nix
     ./web.nix
+    ./jenkins.nix
   ];
 
   services.prometheus = {

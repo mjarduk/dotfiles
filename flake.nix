@@ -30,6 +30,11 @@
       url = "github:sadjow/claude-code-nix";
       inputs.nixpkgs.follows ="nixpkgs";
     };
+
+    proton-ge = {
+      url = "github:Daaboulex/proton-ge-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, home-manager-unstable, agenix, ... }:

@@ -1,4 +1,4 @@
-{ settings, pkgs, lib, home-manager, inputs, ... }:
+{ settings, pkgs, lib, config, home-manager, inputs, ... }:
 {
   imports = [
     home-manager.nixosModules.home-manager
@@ -29,6 +29,16 @@
 
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.graphics.enable = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
+  };
 
   services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "none+i3";
@@ -52,6 +62,8 @@
     noto-fonts
     twemoji-color-font
     liberation_ttf
+    corefonts
+    times-newer-roman
   ];
 
   xdg.portal = {
@@ -67,13 +79,32 @@
     scheduler = "scx_lavd";
   };
 
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplipWithPlugin ];
+  };
+
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.hplipWithPlugin ];
+  };
+
   programs.amnezia-vpn.enable = true;
+  programs.direnv.enable = true;
   nixpkgs.config.allowUnfree = true;
 
-  services.udev.packages = with pkgs; [ libfido2 yubikey-personalization ];
+  services.udev.packages = with pkgs; [ libfido2 yubikey-personalization hplipWithPlugin ];
   users.groups.plugdev = { };
-  users.users.${settings.username}.extraGroups = [ "plugdev" ];
+  users.users.${settings.username}.extraGroups = [ "plugdev" "lp" "scanner" ];
   programs.gnupg.agent.enable = true;
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "kitty.desktop"
+      ];
+    };
+  };
 
   programs.nix-ld = {
     enable = true;

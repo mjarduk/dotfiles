@@ -25,8 +25,9 @@
     };
 
   fileSystems."/mnt/drive_b" =
-    { device = "/dev/disk/by-uuid/C482F81C82F814A0";
-      fsType = "ntfs3";
+    { device = "/dev/disk/by-label/drive_b";
+      fsType = "btrfs";
+      options = [ "nofail" "x-systemd.device-timeout=10" ];
     };
 
   swapDevices =
