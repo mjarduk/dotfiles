@@ -43,6 +43,8 @@
   services.displayManager.ly.enable = true;
   services.displayManager.defaultSession = "none+i3";
 
+  services.udisks2.enable = true;
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -127,6 +129,11 @@
       libxcb
       python313
       libglvnd
+      libva
     ];
   };
+
+  systemd.tmpfiles.rules = [
+    "L+ /usr/lib/dri - - - - /run/opengl-driver/lib/dri"
+  ];
 }

@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     syncthingtray
-    udiskie
 
     keepassxc
     xscreensaver

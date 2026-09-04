@@ -11,7 +11,6 @@ exec --no-startup-id vicinae server
 exec --no-startup-id picom
 exec --no-startup-id keepassxc --minimized
 exec --no-startup-id xscreensaver --no-splash
-exec --no-startup-id udiskie -t
 exec --no-startup-id fcitx5
 exec --no-startup-id dunst
 
