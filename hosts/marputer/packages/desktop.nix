@@ -11,6 +11,7 @@
 
     vlc
     vicinae
+    qbittorrent
 
     flameshot
     yubikey-manager

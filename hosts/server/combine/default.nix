@@ -12,6 +12,7 @@
     ./wg.nix
     ./web.nix
     ./jenkins.nix
+    ./polyglot-image.nix
   ];
 
   services.prometheus = {
