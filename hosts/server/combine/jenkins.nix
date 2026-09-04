@@ -4,12 +4,8 @@
     enable = true;
   };
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    dockerSocket.enable = true;
-  };
-  users.users.jenkins.extraGroups = [ "podman" ];
+  virtualisation.docker.enable = true;
+  users.users.jenkins.extraGroups = [ "docker" ];
 
   networking.firewall.allowedTCPPorts = [ 8080 ];
 }
