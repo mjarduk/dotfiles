@@ -37,7 +37,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, home-manager-unstable, agenix, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, home-manager-unstable, agenix, ... }:
   let
     commonSettings = {
       username = "mjarduk";

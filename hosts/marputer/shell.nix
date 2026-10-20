@@ -1,6 +1,8 @@
 { lib, config, pkgs, ... }: {
-  programs.zsh.shellAliases.switch =
-    lib.mkForce "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dots#marputer; omz reload";
+  programs.zsh.shellAliases = {
+    switch = lib.mkForce "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dots#marputer; omz reload";
+    cat = "bat -pp";
+  };
 
   home.sessionVariables = {
     GTK_IM_MODULE = "fcitx";

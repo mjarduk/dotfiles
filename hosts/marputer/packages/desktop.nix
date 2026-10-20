@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     syncthingtray
+    overskride
 
     keepassxc
     xscreensaver
@@ -10,7 +11,6 @@
     obsidian
 
     vlc
-    vicinae
     qbittorrent
 
     flameshot

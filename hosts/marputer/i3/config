@@ -7,7 +7,6 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 exec --no-startup-id nm-applet
 exec --no-startup-id syncthingtray
-exec --no-startup-id vicinae server
 exec --no-startup-id picom
 exec --no-startup-id keepassxc --minimized
 exec --no-startup-id xscreensaver --no-splash
@@ -23,10 +22,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+Tab exec vicinae toggle
 bindsym $mod+L exec xscreensaver-command -lock
 
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 bindsym $mod+n exec --no-startup-id rofi -show drun

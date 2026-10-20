@@ -25,7 +25,7 @@
       fi
 
       cmd="ranger"
-      termcmd="''${TERMCMD:-kitty --title 'termfilechooser'}"
+      termcmd="''${TERMCMD:-alacritty -T 'termfilechooser' -e}"
 
       if [ "$save" = "1" ]; then
           set -- --choosefile="$out" --cmd="echo Select save path (see tutorial in preview pane; try pressing zv or zp if no preview)" --selectfile="$path"

@@ -1,7 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    kitty
+    alacritty
     ranger
+    ffmpeg-full
     p7zip
   ];
 }

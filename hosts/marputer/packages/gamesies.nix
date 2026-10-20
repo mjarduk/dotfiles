@@ -10,5 +10,6 @@
     javaPackages.compiler.temurin-bin.jdk-21
 
     freecad
+    mixxx
   ];
 }

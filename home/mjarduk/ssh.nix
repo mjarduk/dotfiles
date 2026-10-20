@@ -17,6 +17,14 @@
         Port = 23231;
         User = "mjarduk";
       };
+      # GitHub's port 22 is dropped by the AmneziaVPN exit node; use the
+      # port-443 SSH endpoint instead. Transparent to `ssh git@github.com`
+      # and to git over SSH.
+      "github.com" = {
+        HostName = "ssh.github.com";
+        Port = 443;
+        User = "git";
+      };
       "*" = {
         AddKeysToAgent = "no";
         Compression = false;

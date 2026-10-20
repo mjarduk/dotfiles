@@ -64,6 +64,6 @@ let
   };
 in {
   xdg.configFile."i3/config".source = ./i3/config;
-  xdg.configFile."i3status/config".source = ./i3status/config;
+  xdg.configFile."i3status/config".source = ./i3/config_status;
   home.packages = [ i3status-peak-wrapper ];
 }
