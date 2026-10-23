@@ -4,6 +4,7 @@ font pango:Cozette 9
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec --no-startup-id /mnt/drive_b/Projects/Misc/wallpaper/result/bin/lion -s 2
 
 exec --no-startup-id nm-applet
 exec --no-startup-id syncthingtray

@@ -72,6 +72,7 @@
         settings = commonSettings // {
           hostname = "combine";
           vpnPort =   46780;
+          sshPublic = true;
         };
       in nixpkgs.lib.nixosSystem {
         specialArgs = { inherit settings; };
