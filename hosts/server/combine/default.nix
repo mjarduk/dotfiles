@@ -51,4 +51,8 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 3000 9000 ];
+
+  networking.nameservers = [ "9.9.9.9" "149.112.112.112" "77.88.8.8" ];
+  networking.dhcpcd.extraConfig = "nohook resolv.conf";
+  networking.resolvconf.extraOptions = [ "timeout:2" ];
 }

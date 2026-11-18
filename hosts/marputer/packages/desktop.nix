@@ -11,12 +11,15 @@
     obsidian
 
     vlc
+    obs-studio
     qbittorrent
+
+    libreoffice
+    inkscape
 
     flameshot
     yubikey-manager
 
     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

@@ -6,6 +6,7 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       amnezia-vpn = unstable.amnezia-vpn;
+      amneziawg-tools = unstable.amneziawg-tools;
     })
   ];
 }

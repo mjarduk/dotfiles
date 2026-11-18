@@ -47,6 +47,9 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  services.openssh.enable = true;
+  services.openssh.openFirewall = true;
+
   hardware.graphics.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;

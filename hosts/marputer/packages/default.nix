@@ -7,5 +7,6 @@
     ./code.nix
     ./socials.nix
     ./gamesies.nix
+    ./slop.nix
   ];
 }

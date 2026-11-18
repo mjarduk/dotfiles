@@ -18,9 +18,14 @@
       libsm
       libice
       libxcb
+      icu
+      alsa-lib
+      alsa-plugins
+      libpulseaudio
       python314
       libglvnd
       libva
+      fuse3
     ];
   };
 }
