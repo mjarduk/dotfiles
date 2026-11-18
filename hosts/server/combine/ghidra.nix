@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   dataDir = "/var/lib/ghidra";
-  jdk = pkgs.jdk21;
+  jdk = pkgs.jdk25;
   ghidra = pkgs.ghidra;
   ghidraHome = "${ghidra}/lib/ghidra";
   serverData = "${ghidraHome}/Ghidra/Features/GhidraServer/data";
