@@ -11,5 +11,7 @@
 
     freecad
     mixxx
+    gimp
+    krita
   ];
 }

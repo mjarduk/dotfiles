@@ -3,7 +3,7 @@
   networking.firewall.allowedTCPPorts = [ 23231 ];
 
   services.soft-serve = {
-    enable = true;
+    enable = false;
     settings = {
       name = "marduk.ru git";
 

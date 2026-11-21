@@ -4,12 +4,14 @@
     zed-editor
     uv
     jetbrains.idea
+    jetbrains.rider
     python314
     gcc
     sbcl
     winbox4
     sing-box
     ghidra
+    git-lfs
 
     ansible
     ansible-lint
