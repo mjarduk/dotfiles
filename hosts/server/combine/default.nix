@@ -8,7 +8,6 @@
 
   imports = [
     ./garage.nix
-    ./git.nix
     ./wg.nix
     ./web.nix
     ./jenkins.nix

@@ -47,6 +47,14 @@ in {
       ExecStart = "${startScript}";
       Restart = "on-failure";
       RestartSec = 5;
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      PrivateDevices = true;
+      ReadWritePaths = [ "/var/lib/ghidra" ];
+      NoNewPrivileges = true;
+      RestrictAddressFamilies = [ "AF_INET" "AF_INET6" ];
+      MemoryDenyWriteExecute = false;
+      SystemCallFilter = [ "@system-service" ];
     };
   };
 }
