@@ -10,8 +10,7 @@
     ./garage.nix
     ./wg.nix
     ./web.nix
-    ./jenkins.nix
-    ./polyglot-image.nix
+    ./jenkins
     ./ghidra.nix
   ];
 
